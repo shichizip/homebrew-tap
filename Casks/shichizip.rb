@@ -7,7 +7,7 @@ cask "shichizip" do
 
   url "https://github.com/idawnlight/ShichiZip/releases/download/v#{version}/ShichiZip-v#{version}-#{arch}.zip"
   name "ShichiZip"
-  desc "7-Zip derivative intended for macOS"
+  desc "7-Zip derivative GUI"
   homepage "https://github.com/idawnlight/ShichiZip"
 
   livecheck do
