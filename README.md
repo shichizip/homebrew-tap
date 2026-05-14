@@ -14,9 +14,10 @@ brew install --cask shichizip
 
 ### ShichiZip ZS (Zstandard Support)
 
+Well, this tap is modified from the upstream to track the `ShichiZipZS` variant with Zstandard support, so you can install it directly:
+
 ```sh
-brew tap ChiahongHong/shichizip
-# brew tap <owner>/shichizip
+brew tap szw0407/shichizip-zs
 brew install --cask shichizip-zs
 ```
 
