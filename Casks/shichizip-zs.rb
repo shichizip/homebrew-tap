@@ -1,13 +1,13 @@
 cask "shichizip-zs" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.1.6"
-  sha256 arm:   "d6b2380332e990971ae699fc528cb9d8bfd19b4aec1f7b750cc3a541d437377a",
-         intel: "1d5f802731f924fb4d905c2a81e39caec6ebdd2431bb80dd971fd3ef015fbb4f"
+  version "0.2.0"
+  sha256 arm:   "19987c1b9482caa95f3cd3f9c449e2776f91fd458445abf72a79af7e9c55d1a0",
+         intel: "61b573ea7bedbf2632a9d1eabe9a5f8f903139f22427b29d3c97905762375e27"
 
   url "https://github.com/idawnlight/ShichiZip/releases/download/v#{version}/ShichiZipZS-v#{version}-#{arch}.zip"
   name "ShichiZip ZS"
-  desc "7-Zip derivative GUI (ZS variant with Zstandard compression support)"
+  desc "7-Zip derivative GUI based on mcmilk/7-Zip-zstd"
   homepage "https://github.com/idawnlight/ShichiZip"
 
   livecheck do
@@ -15,7 +15,9 @@ cask "shichizip-zs" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  conflicts_with cask: "shichizip-zs@nightly"
+
+  depends_on macos: :ventura
 
   app "ShichiZip ZS.app"
 
