@@ -1,37 +1,51 @@
 # homebrew-shichizip
 
-Unofficial Homebrew tap for [ShichiZip](https://github.com/idawnlight/ShichiZip), the 7-Zip derivative intended for macOS.
+Homebrew tap for [ShichiZip](https://github.com/idawnlight/ShichiZip), the 7-Zip derivative intended for macOS.
 
-## Install
-
-### ShichiZip (Standard)
+> [!NOTE]
+> If you only need the stable release of ShichiZip standard variant, you can install it directly from the Homebrew Cask repository without adding this tap. This tap provides additional casks for the ZS variant and nightly builds.
 
 ```sh
-brew tap ChiahongHong/shichizip
-# brew tap <owner>/shichizip
 brew install --cask shichizip
 ```
 
-### ShichiZip ZS (Zstandard Support)
+## Install
 
-Well, this tap is modified from the upstream to track the `ShichiZipZS` variant with Zstandard support, so you can install it directly:
+### ShichiZip
 
 ```sh
-brew tap szw0407/shichizip-zs
+brew tap shichizip/tap
+brew install --cask shichizip
+```
+
+### ShichiZip ZS
+
+```sh
+brew tap shichizip/tap
 brew install --cask shichizip-zs
+```
+
+### Nightly Builds
+
+```sh
+brew tap shichizip/tap
+brew install --cask shichizip@nightly
+brew install --cask shichizip-zs@nightly
 ```
 
 ## Updates
 
-This tap checks the latest upstream ShichiZip release once per day at 00:30 UTC using GitHub Actions.
+The ShichiZip repository publishes rendered casks to this tap. Stable casks track published GitHub releases, and nightly casks track selected successful `main` branch build artifacts.
 
-The updater tracks both the regular `ShichiZip` app release assets and the `ShichiZipZS` variant:
+The stable casks track both the regular `ShichiZip` app release assets and the `ShichiZipZS` variant:
 
 - `ShichiZip-v<version>-arm64.zip`
 - `ShichiZip-v<version>-x86_64.zip`
 - `ShichiZipZS-v<version>-arm64.zip`
 - `ShichiZipZS-v<version>-x86_64.zip`
 
-It does not track prereleases or draft releases.
+Nightly casks use `nightly.link` URLs for GitHub Actions artifacts from the ShichiZip repository.
 
-You can also run the updater manually from the `Update ShichiZip Cask` workflow in GitHub Actions.
+## Maintenance
+
+The template and renderer live in this tap under `templates/` and `scripts/`. The ShichiZip workflows check out this tap, render updated casks in place, and push the resulting changes back here.

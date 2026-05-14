@@ -1,0 +1,20 @@
+cask "{{ token }}" do
+  arch arm: "arm64", intel: "x86_64"
+
+  version "{{ version }}"
+  sha256 arm:   "{{ arm_sha256 }}",
+         intel: "{{ intel_sha256 }}"
+
+  url "{{ url }}"
+  name "{{ name }}"
+  desc "{{ desc }}"
+  homepage "{{ homepage }}"
+
+{{ livecheck_block }}{{ conflicts_block }}  depends_on macos: :ventura
+
+  app "{{ app }}"
+
+  zap trash: [
+{{ zap_trash }}
+  ]
+end
