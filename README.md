@@ -27,6 +27,9 @@ brew install --cask shichizip-zs
 
 ### Nightly Builds
 
+> [!NOTE]
+> Nightly builds are signed with a development certificate, not notarized, and will not pass Gatekeeper's checks on macOS. These builds are intended for testing and development purposes only.
+
 ```sh
 brew tap shichizip/tap
 brew install --cask shichizip@nightly
