@@ -1,11 +1,11 @@
 cask "shichizip@nightly" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.3.2-nightly.20260819.b60c261"
-  sha256 arm:   "156896e1f664fff43942e424ca284dcffb67816bef8545c40c01780f7735fdb1",
-         intel: "d050ce4b49116fd32671ca5f0fe07ca51a647bc5cb0361f10468aaf247db746f"
+  version "0.3.2-nightly.20260909.430cacf"
+  sha256 arm:   "5892d0a982256efadadbd9561ca8a5a06b29086afdc4ec69a97ab90911518978",
+         intel: "cd026ca24666ec9c8cf797152d658a5d5161932d1e1b34adbbb6ea5d77b29589"
 
-  url "https://nightly.link/idawnlight/ShichiZip/actions/runs/32233140103/ShichiZip-b60c261-#{arch}.zip"
+  url "https://nightly.link/idawnlight/ShichiZip/actions/runs/34308786306/ShichiZip-430cacf-#{arch}.zip"
   name "ShichiZip"
   desc "7-Zip derivative GUI"
   homepage "https://github.com/idawnlight/ShichiZip"
